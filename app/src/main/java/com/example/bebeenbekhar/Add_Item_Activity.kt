@@ -12,6 +12,7 @@ import com.google.android.material.textfield.TextInputLayout
 
 class Add_Item_Activity : AppCompatActivity() {
     lateinit var binding: ActivityAddItemBinding
+    var u = 3
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
