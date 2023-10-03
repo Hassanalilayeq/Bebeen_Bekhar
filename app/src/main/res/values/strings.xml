@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bebeen Bekhar</string>
+    <string name="application_name">ببین بخر</string>
+    <string name="profile_icon">تنظیمات من</string>
+    <string name="add_item_icon">ثبت اعلان</string>
+    <string name="list_icon">دسته ها</string>
+    <string name="home_icon">خانه</string>
+</resources>
