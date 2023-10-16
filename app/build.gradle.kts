@@ -1,11 +1,13 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
 }
 
 android {
     namespace = "com.example.bebeenbekhar"
-    compileSdk = 33
+    compileSdk = 34
 
     buildFeatures{
         viewBinding = true
@@ -55,8 +57,15 @@ dependencies {
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
-
 // transformations
     implementation ("jp.wasabeef:glide-transformations:4.3.0")
+
+    //navigation
+    implementation ("androidx.navigation:navigation-fragment-ktx:2.7.4")
+    implementation ("androidx.navigation:navigation-ui-ktx:2.7.4")
+
+    // room
+    implementation ("androidx.room:room-runtime:2.5.2")
+    kapt ("androidx.room:room-compiler:2.5.2")
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,7 +10,11 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,15 +23,16 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/imgItem"
+                android:layout_width="320dp"
+                android:layout_height="220dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/pic1" />
 
             <LinearLayout
-                android:layout_marginTop="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
                 android:gravity="end|center"
                 android:orientation="vertical">
 
@@ -35,8 +40,8 @@
                     android:id="@+id/txt_Title_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text=" ساعت هوشمند"
                     android:layout_marginEnd="16dp"
+                    android:text=" ساعت هوشمند"
                     android:textColor="?attr/colorOnPrimary"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -77,20 +82,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:text="در حد نو"
                     android:layout_marginStart="16dp"
+                    android:text="در حد نو"
                     android:textColor="@color/black_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
 
             </FrameLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/gray_lighter" />
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -110,20 +117,22 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:text="وسایل شخصی "
                     android:layout_marginStart="16dp"
+                    android:text="وسایل شخصی "
                     android:textColor="@color/black_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
 
             </FrameLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/gray_lighter" />
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -143,44 +152,58 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:text="۳۸۰ افغانی "
+                    android:layout_marginStart="80dp"
+                    android:text="3298"
+                    android:textColor="@color/black_light"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txt_priceArz_result_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
                     android:layout_marginStart="16dp"
+                    android:text="افغانی"
                     android:textColor="@color/black_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
 
+
             </FrameLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/gray_lighter" />
+
             <LinearLayout
-                android:gravity="end|center"
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="end|center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/txt_description_details"
-                    android:text="توضیحات"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorOnPrimary"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="توضیحات"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txt_description_result_details"
-                    android:maxLines="20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:maxLength="400"
+                    android:maxLines="20"
                     android:text="کاملا سالم بدون کدام خراش تمام وسایل اش اصل از خود اش است. هیچ قسمت ان تبدیل نشده است. "
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -190,21 +213,22 @@
 
                 <TextView
                     android:id="@+id/txt_sellerName_details"
-                    android:text="اگهی گذار"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:textColor="?attr/colorOnPrimary"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:text="اگهی گذار"
+                    android:textColor="?attr/colorOnPrimary"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/txt_sellerStartDate_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:maxLines="1"
                     android:text="عضو ببین بخر از دو سال پیش"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:textStyle="bold" />
+
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -234,14 +258,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:text="۳ اگهی"
                     android:layout_marginStart="16dp"
+                    android:text="۳ اگهی"
                     android:textColor="@color/black_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
 
             </FrameLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -268,14 +293,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
-                    android:text="۲ اگهی"
                     android:layout_marginStart="16dp"
+                    android:text="۲ اگهی"
                     android:textColor="@color/black_light"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
 
             </FrameLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -284,26 +310,24 @@
                 android:background="@color/gray_lighter" />
 
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCall"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:backgroundTint="?attr/colorSecondary"
+                android:text="تماس تلفنی"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_gravity="bottom|center"
-            android:backgroundTint="?attr/colorSecondary"
-            android:text="تماس تلفنی"
-            android:textColor="?attr/colorPrimary"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

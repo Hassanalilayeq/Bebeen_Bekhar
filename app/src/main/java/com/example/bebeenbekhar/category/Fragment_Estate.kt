@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.example.bebeenbekhar.databinding.FragmentEstateBinding
 import com.example.bebeenbekhar.home.HomeActivity
 
-class Fragment_Estate(): Fragment() {
+class Fragment_Estate: Fragment() {
 
     lateinit var binding:FragmentEstateBinding
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

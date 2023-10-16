@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarLayoutMain"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
@@ -37,300 +42,190 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/divisin_layout"
+    <LinearLayout
+        android:id="@+id/linear_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/black"
-        android:foregroundTint="@color/black"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appbarLayoutMain">
 
-        <LinearLayout
-            android:id="@+id/linear_main"
+        <FrameLayout
+            android:id="@+id/frame_estate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="املاک و جایداد"
+                android:textSize="18sp"
+                android:textStyle="normal" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_arrow" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_vehicle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/dastabandi_card_estate"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="وسایط نقلیه"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-                <FrameLayout
-                    android:id="@+id/frame_estate"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="املاک و جایداد"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_margin="10dp"
-                        app:srcCompat="@drawable/ic_arrow" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="start|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_arrow" />
 
-                <FrameLayout
-                    android:id="@+id/frame_vehicle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+        </FrameLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="وسایط نقلیه"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
+        <FrameLayout
+            android:id="@+id/frame_electric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_margin="10dp"
-                        app:srcCompat="@drawable/ic_arrow" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/dastabandi_card_electric"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="لوازم الکترونیکی"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-                <FrameLayout
-                    android:id="@+id/frame_electric"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="لوازم الکترونیکی"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_margin="10dp"
-                        app:srcCompat="@drawable/ic_arrow" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/dastabandi_card_house"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="start|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_arrow" />
 
-                <FrameLayout
-                    android:id="@+id/frame_house"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+        </FrameLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="لوازم خانه"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
+        <FrameLayout
+            android:id="@+id/frame_house"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_margin="10dp"
-                        app:srcCompat="@drawable/ic_arrow" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/dastabandi_card_personal"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="لوازم خانه"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-                <FrameLayout
-                    android:id="@+id/frame_personal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="وسایل شخصی"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="start|center"
-                        android:layout_margin="10dp"
-                        app:srcCompat="@drawable/ic_arrow" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/dastabandi_card_entertain"
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="start|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_arrow" />
 
-                <FrameLayout
-                    android:id="@+id/frame_entertain"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+        </FrameLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="سرگرمی و تفریح"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
+        <FrameLayout
+            android:id="@+id/frame_personal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardCornerRadius="4dp"
-                app:cardElevation="6dp"
-                app:rippleColor="@color/white"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck">
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="وسایل شخصی"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-                <FrameLayout
-                    android:id="@+id/frame_dire"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/ic_arrow" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_margin="10dp"
-                        android:text="استخدام و کاریابی"
-                        android:textSize="16sp"
-                        android:textStyle="normal" />
+        </FrameLayout>
 
-                </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame_entertain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-            </com.google.android.material.card.MaterialCardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="سرگرمی و تفریح"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-            <!--        <include
-                android:id="@+id/card_view"
-                layout="@layout/item_card" />-->
+        </FrameLayout>
 
-        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/frame_dire"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?attr/colorPrimary"
+            android:elevation="8dp"
+            android:padding="12dp">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_margin="10dp"
+                android:text="استخدام و کاریابی"
+                android:textSize="18sp"
+                android:textStyle="normal" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

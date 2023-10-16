@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.databinding.FragmentDivisionBinding
 import com.example.bebeenbekhar.home.HomeActivity
 
-class Fragment_Division(): Fragment() {
+class Fragment_Division: Fragment() {
 
     lateinit var binding: FragmentDivisionBinding
     override fun onCreateView(
@@ -25,14 +27,10 @@ class Fragment_Division(): Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        changeFragment()
 
-    }
-
-    fun changeFragment(){
 
         binding.frameEstate.setOnClickListener {
-            replaceFragment(Fragment_Estate())
+           replaceFragment(Fragment_Estate())
         }
 
         binding.frameVehicle.setOnClickListener {
@@ -60,12 +58,16 @@ class Fragment_Division(): Fragment() {
             val intent = Intent(context, HomeActivity::class.java)
             startActivity(intent)
         }
+
     }
 
     fun replaceFragment(fragment: Fragment){
         val transaction = parentFragmentManager.beginTransaction()
-        transaction.replace(R.id.frame_main_container, fragment)
+        transaction.replace(R.id.frameContainerView, fragment)
+        transaction.addToBackStack(null)
         transaction.commit()
     }
+
+
 
 }

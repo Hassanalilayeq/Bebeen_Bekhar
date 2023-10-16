@@ -16,6 +16,8 @@ class HomeAdapter(private val data: ArrayList<SellItem>, val itemEvent: ItemEven
 
     lateinit var binding: SellItemLayoutBinding
 
+
+
     inner class HomeViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
 
@@ -26,10 +28,10 @@ class HomeAdapter(private val data: ArrayList<SellItem>, val itemEvent: ItemEven
                 .transform(RoundedCornersTransformation(16, 4))
                 .into(binding.imgItem)
 
-            binding.txtTitle.text = sellItem.txtTitle
-            binding.txtType.text = sellItem.txtType
-            binding.txtPrice.text =  sellItem.txtPrice.toString() +" افغانی"
-            binding.txtAddress.text = sellItem.txtAddress
+            binding.txtTitle.text = sellItem.itemTitle
+            binding.txtType.text = sellItem.itemState
+            binding.txtPrice.text =  sellItem.itemPrice.toString() +" افغانی"
+            binding.txtAddress.text = sellItem.itemAddress
 
 
             itemView.setOnClickListener {
@@ -39,21 +41,30 @@ class HomeAdapter(private val data: ArrayList<SellItem>, val itemEvent: ItemEven
 
     }
 
+    fun setData(newData: ArrayList<SellItem>){
+        data.clear()
+        data.addAll(newData)
+        notifyDataSetChanged()
+    }
+    fun addSellItem(sellItem: SellItem){
+        data.add(0, sellItem)
+        notifyItemInserted(0)
+    }
+
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
 
         holder.bindView(data[position])
 
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
 
         binding = SellItemLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return HomeViewHolder(binding.root)
     }
-
     override fun getItemCount(): Int {
         return data.size
     }
+
 
 
 }

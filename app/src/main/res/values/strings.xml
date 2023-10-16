@@ -5,4 +5,44 @@
     <string name="add_item_icon">ثبت اعلان</string>
     <string name="list_icon">دسته ها</string>
     <string name="home_icon">خانه</string>
+
+
+    <string-array name="Arz">
+        <item>افغانی</item>
+        <item>توافقی</item>
+    </string-array>
+
+    <string-array name="State_list">
+        <item>ناحیه اول</item>
+        <item>ناحیه دوم</item>
+        <item>ناحیه سوم</item>
+        <item>ناحیه چهارم</item>
+        <item>ناحیه پنجم</item>
+        <item>ناحیه ششم</item>
+        <item>ناحیه هفتم</item>
+        <item>ناحیه هشتم</item>
+        <item>ناحیه نهم</item>
+        <item>ناحیه دهم</item>
+        <item>ناحیه یازدهم</item>
+        <item>ناحیه دوازدهم</item>
+    </string-array>
+
+    <string-array name="Provice_list">
+
+        <item>همه ولایات</item>
+        <item>کابل</item>
+        <item>هرات</item>
+        <item>کندهار</item>
+        <item>مزار شریف</item>
+        <item>غزنی</item>
+        <item>پروان</item>
+        <item>پنجشیر</item>
+        <item>غور</item>
+        <item>سرپل</item>
+        <item>زابل</item>
+        <item>میدان وردک</item>
+        <item>قندز</item>
+
+    </string-array>
+
 </resources>
