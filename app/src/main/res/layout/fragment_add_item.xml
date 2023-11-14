@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".Add_Item_Activity">
+    android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarLayoutMain"
@@ -15,16 +14,6 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/imgBackStack"
-                android:layout_width="38dp"
-                android:layout_height="34dp"
-                android:layout_gravity="end"
-                android:layout_marginEnd="12dp"
-                android:src="@drawable/ic_arrow_back"
-                app:tint="?attr/colorSecondary" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,25 +48,42 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/textView4"
+                android:visibility="visible"
+                android:id="@+id/txtTypeTools"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:padding="8dp"
-                android:text="انتخاب تصویر"
-                android:textColor="@color/black_light"
+                android:text="انتخاب مجموعه"
                 android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/btnTypeTools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16sp"
+                android:layout_marginEnd="16sp"
+                android:backgroundTint="?attr/colorSecondary"
+                android:padding="16dp"
+                android:text="انتخاب مجموعه"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/txtTypeTools"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <HorizontalScrollView
+                android:layout_marginTop="16dp"
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:scrollbars="none"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView4">
+                app:layout_constraintTop_toBottomOf="@+id/btnTypeTools">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -85,6 +91,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/img1"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_gravity="center"
@@ -94,9 +101,23 @@
                         android:elevation="8dp"
                         android:padding="32dp"
                         android:scaleType="fitXY"
+                        android:src="@drawable/ic_photos"/>
+
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@color/gray_lighter"
+                        android:elevation="8dp"
+                        android:scaleType="fitXY"
+                        android:padding="32dp"
                         android:src="@drawable/ic_photos" />
 
                     <ImageView
+                        android:id="@+id/img3"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_gravity="center"
@@ -104,11 +125,12 @@
                         android:layout_marginEnd="8dp"
                         android:background="@color/gray_lighter"
                         android:elevation="8dp"
-                        android:padding="32dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_photos" />
+                        android:padding="32dp"
+                        android:src="@drawable/ic_photos"/>
 
                     <ImageView
+                        android:id="@+id/img4"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:layout_gravity="center"
@@ -116,20 +138,8 @@
                         android:layout_marginEnd="8dp"
                         android:background="@color/gray_lighter"
                         android:elevation="8dp"
-                        android:padding="32dp"
                         android:scaleType="fitXY"
-                        android:src="@drawable/ic_photos" />
-
-                    <ImageView
-                        android:layout_width="120dp"
-                        android:layout_height="120dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
-                        android:background="@color/gray_lighter"
-                        android:elevation="8dp"
                         android:padding="32dp"
-                        android:scaleType="fitXY"
                         android:src="@drawable/ic_photos" />
 
                 </LinearLayout>
@@ -143,8 +153,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="?attr/colorSecondary"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:padding="16dp"
                 android:text="انتخاب تصویر"
                 android:textColor="?attr/colorPrimary"
                 android:textSize="18sp"
@@ -152,34 +161,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
-            <TextView
-                android:id="@+id/txtTypeTools"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:padding="8dp"
-                android:text="انتخاب مجموعه"
-                android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnChoosePic" />
-
-            <Button
-                android:id="@+id/btnTypeTools"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16sp"
-                android:layout_marginEnd="16sp"
-                android:backgroundTint="?attr/colorSecondary"
-                android:padding="8dp"
-                android:text="انتخاب مجموعه"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTypeTools" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextField"
@@ -195,7 +176,7 @@
                 app:hintTextColor="?attr/colorOnPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnTypeTools">
+                app:layout_constraintTop_toBottomOf="@+id/btnChoosePic">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edtTitleChoose"
@@ -217,7 +198,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/outlinedTextField">
-
 
                 <Spinner
                     android:id="@+id/spinnerArz"
@@ -251,7 +231,7 @@
                         android:id="@+id/edtPriceTools"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
+                        android:inputType="number"
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -279,7 +259,7 @@
                     android:id="@+id/edtStateTools"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="textAutoComplete"
                     android:textSize="18sp"
                     android:textStyle="bold" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -376,38 +356,58 @@
                         android:layout_height="match_parent"
                         android:inputType="text"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/txtInputDate"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:hint="تاریخ صدور"
+                android:textDirection="rtl"
+                app:boxStrokeColor="@color/black_light"
+                app:boxStrokeWidth="1dp"
+                app:hintEnabled="true"
+                app:hintTextColor="?attr/colorOnPrimary"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/txtInputStateAddress"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:padding="8dp"
                 android:layout_marginEnd="8dp"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@+id/btn_add_item"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayoutAddress">
+                app:layout_constraintTop_toBottomOf="@+id/txtInputDate">
 
                 <Spinner
                     android:id="@+id/spinnerState"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:entries="@array/State_list"
+                    android:entries="@array/nahia"
                     android:layoutDirection="rtl"
-                    android:padding="8dp"
                     android:textDirection="rtl" />
 
             </com.google.android.material.textfield.TextInputLayout>
             <View
-                android:layout_marginTop="8dp"
                 android:background="@color/black_light"
                 android:id="@+id/viewunderState"
                 app:layout_constraintStart_toStartOf="parent"

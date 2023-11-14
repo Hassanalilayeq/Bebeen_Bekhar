@@ -1,16 +1,15 @@
 package com.example.bebeenbekhar.category
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.databinding.FragmentDivisionBinding
-import com.example.bebeenbekhar.home.HomeActivity
+import com.example.bebeenbekhar.home.FragmentHome
+
 
 class Fragment_Division: Fragment() {
 
@@ -30,34 +29,29 @@ class Fragment_Division: Fragment() {
 
 
         binding.frameEstate.setOnClickListener {
-           replaceFragment(Fragment_Estate())
+           replaceFragment(FragmentHome())
         }
 
         binding.frameVehicle.setOnClickListener {
-            replaceFragment(Fragment_vehicle())
+            replaceFragment(FragmentHome())
         }
 
         binding.frameElectric.setOnClickListener {
-            replaceFragment(Fragment_Electric())
+            replaceFragment(FragmentHome())
         }
 
         binding.frameHouse.setOnClickListener {
-            replaceFragment(Fragment_House_Tools())
+            replaceFragment(FragmentHome())
         }
 
         binding.framePersonal.setOnClickListener {
-            replaceFragment(Fragment_Personal_Devices())
+            replaceFragment(FragmentHome())
         }
 
         binding.frameEntertain.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
+            replaceFragment(FragmentHome())
         }
 
-        binding.frameDire.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
-        }
 
     }
 

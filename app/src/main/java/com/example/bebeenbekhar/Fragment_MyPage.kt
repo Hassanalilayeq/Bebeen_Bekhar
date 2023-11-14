@@ -31,36 +31,18 @@ class Fragment_MyPage(): Fragment() {
 
         binding.frameProfile.setOnClickListener {
 
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameSms.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameNotify.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameLocation.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameLang.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameSave.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
-        }
-        binding.frameService.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
         binding.frameRule.setOnClickListener {
-            val intent = Intent(context, HomeActivity::class.java)
-            startActivity(intent)
         }
     }
 

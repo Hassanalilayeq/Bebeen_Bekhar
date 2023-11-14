@@ -12,6 +12,14 @@
         <item>توافقی</item>
     </string-array>
 
+    <string-array name="nahia">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+    </string-array>
+
     <string-array name="State_list">
         <item>ناحیه اول</item>
         <item>ناحیه دوم</item>
@@ -25,11 +33,12 @@
         <item>ناحیه دهم</item>
         <item>ناحیه یازدهم</item>
         <item>ناحیه دوازدهم</item>
+        <item>ناحیه سیزدهم</item>
+        <item>ناحیه چهاردهم</item>
+        <item>ناحیه پانزدهم</item>
     </string-array>
 
     <string-array name="Provice_list">
-
-        <item>همه ولایات</item>
         <item>کابل</item>
         <item>هرات</item>
         <item>کندهار</item>
@@ -42,7 +51,12 @@
         <item>زابل</item>
         <item>میدان وردک</item>
         <item>قندز</item>
-
+        <item>ننگرهار</item>
+        <item>بامیان</item>
+        <item>بدخشان</item>
+        <item>فاریاب</item>
+        <item>دایکندی</item>
+        <item>لوگر</item>
     </string-array>
 
 </resources>

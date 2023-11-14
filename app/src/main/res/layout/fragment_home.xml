@@ -1,62 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="12dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/shep_circle_search"
-            android:elevation="4dp"
-            android:orientation="horizontal"
-            android:weightSum="10">
-
-            <Spinner
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="8dp"
-                android:layout_weight="4"
-                android:entries="@array/Provice_list"
-                android:layoutDirection="rtl"
-                android:textDirection="rtl" />
-            <View
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@color/gray_light"
-                android:layout_width="1dp"
-                android:layout_height="match_parent"/>
-
             <EditText
+                android:layoutDirection="rtl"
+                android:padding="16dp"
+                android:elevation="8dp"
                 android:id="@+id/edtSearch"
                 android:drawableTint="@color/black_light"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_marginEnd="8dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_weight="6"
                 android:background="@drawable/shep_circle_search"
                 android:drawableEnd="@drawable/ic_search"
                 android:drawablePadding="12dp"
-                android:hint="دنبال چه هستید؟"
-                android:textDirection="rtl" />
-
-        </LinearLayout>
+                android:hint="دنبال چه هستید؟"/>
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
@@ -67,7 +31,7 @@
             android:scrollbars="none">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingTop="8dp"
@@ -231,17 +195,12 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-    </LinearLayout>
-
     <androidx.recyclerview.widget.RecyclerView
+        android:scrollbarStyle="insideInset"
         android:id="@+id/recycleview_Home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
         tools:listitem="@layout/sell_item_layout" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

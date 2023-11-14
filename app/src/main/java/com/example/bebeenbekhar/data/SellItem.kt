@@ -1,13 +1,15 @@
 package com.example.bebeenbekhar.data
 
 import android.os.Parcelable
+import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class SellItem(
 
-    val sellItemId: Int = 0,
+    var itemDistrict : Int,
     val imageUrl: Int,
+    val itemType: String,
     val itemTitle: String,
     val itemState: String,
     val itemDescription: String,

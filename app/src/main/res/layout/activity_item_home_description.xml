@@ -37,7 +37,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txt_Title_details"
+                    android:id="@+id/txt_Title_Items"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
@@ -47,11 +47,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_address_details"
+                    android:id="@+id/txt_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
-                    android:text="نیم ساعت پیش کابل، برچی"
+                    android:text=" کابل، برچی"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -62,13 +62,45 @@
                     android:layout_marginBottom="16dp"
                     android:background="@color/gray_lighter" />
             </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center"
+                    android:layout_marginEnd="16dp"
+                    android:text="دسته بندی"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_List_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start|center"
+                    android:layout_marginStart="16dp"
+                    android:text="املاک و جایداد"
+                    android:textColor="@color/black_light"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/gray_lighter" />
 
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txt_usege_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center"
@@ -78,14 +110,14 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_usege_result_details"
+                    android:id="@+id/txt_usege_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
                     android:layout_marginStart="16dp"
                     android:text="در حد نو"
                     android:textColor="@color/black_light"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
 
@@ -103,7 +135,6 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txt_itemType_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center"
@@ -113,14 +144,14 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_item_type_result_details"
+                    android:id="@+id/txt_item_type_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
                     android:layout_marginStart="16dp"
                     android:text="وسایل شخصی "
                     android:textColor="@color/black_light"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
 
@@ -138,7 +169,6 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txt_price_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center"
@@ -148,27 +178,15 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_price_result_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center"
-                    android:layout_marginStart="80dp"
-                    android:text="3298"
-                    android:textColor="@color/black_light"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/txt_priceArz_result_details"
+                    android:id="@+id/txt_price_result"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
                     android:layout_marginStart="16dp"
-                    android:text="افغانی"
+                    android:text="3,200"
                     android:textColor="@color/black_light"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
-
-
 
             </FrameLayout>
 
@@ -186,7 +204,6 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txt_description_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="توضیحات"
@@ -201,7 +218,7 @@
                     android:maxLength="400"
                     android:maxLines="20"
                     android:text="کاملا سالم بدون کدام خراش تمام وسایل اش اصل از خود اش است. هیچ قسمت ان تبدیل نشده است. "
-                    android:textSize="18sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <View
@@ -210,62 +227,8 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:background="@color/gray_lighter" />
-
-                <TextView
-                    android:id="@+id/txt_sellerName_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="اگهی گذار"
-                    android:textColor="?attr/colorOnPrimary"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txt_sellerStartDate_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:text="عضو ببین بخر از دو سال پیش"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/gray_lighter" />
-
 
             </LinearLayout>
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/txt_itemNumberForSale"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end|center"
-                    android:layout_marginEnd="16dp"
-                    android:text="اگهی منتشر شده"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/txt_numberOfItems_result"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start|center"
-                    android:layout_marginStart="16dp"
-                    android:text="۳ اگهی"
-                    android:textColor="@color/black_light"
-                    android:textSize="22sp"
-                    android:textStyle="bold" />
-
-
-            </FrameLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -279,24 +242,23 @@
                 android:layout_height="wrap_content">
 
                 <TextView
-                    android:id="@+id/txt_Active_ItemForSale"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center"
                     android:layout_marginEnd="16dp"
-                    android:text="اگهی فعال"
+                    android:text="تاریخ صدور"
                     android:textSize="22sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/txt_Active_ItemForSale_Result"
+                    android:id="@+id/txt_Date_issuse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|center"
                     android:layout_marginStart="16dp"
-                    android:text="۲ اگهی"
+                    android:text="۲۰۲۳ - ۳ - ۱۲"
                     android:textColor="@color/black_light"
-                    android:textSize="22sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
 
@@ -313,19 +275,17 @@
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCall"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
+                android:layout_marginTop="8dp"
+                android:padding="16dp"
                 android:backgroundTint="?attr/colorSecondary"
                 android:text="تماس تلفنی"
                 android:textColor="?attr/colorPrimary"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="20sp"
+                android:textStyle="bold"/>
 
         </LinearLayout>
 

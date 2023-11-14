@@ -62,6 +62,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_state_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -89,6 +90,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_vihicle_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -116,6 +118,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_Electric_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -143,6 +146,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_house_tool_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -170,6 +174,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_private_tools"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"
@@ -197,6 +202,7 @@
             android:padding="12dp">
 
             <TextView
+                android:id="@+id/txt_entertaint_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center"

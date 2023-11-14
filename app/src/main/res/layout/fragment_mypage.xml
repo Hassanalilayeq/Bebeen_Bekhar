@@ -128,7 +128,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="end|center_vertical"
-                        app:srcCompat="@drawable/ic_amalak" />
+                        app:srcCompat="@drawable/ic_chat" />
 
                     <TextView
                         android:textSize="18sp"
@@ -167,7 +167,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="end|center_vertical"
-                        android:src="@drawable/ic_search" />
+                        android:src="@drawable/ic_announce" />
 
                     <TextView
                         android:textSize="18sp"
@@ -232,7 +232,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center_vertical"
-                        android:layout_marginEnd="110dp"
+                        android:layout_marginEnd="130dp"
                         android:text="دایکندی"
                         android:textColor="?attr/colorSecondary" />
 
@@ -264,7 +264,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="end|center_vertical"
-                        app:srcCompat="@drawable/ic_other_tools" />
+                        app:srcCompat="@drawable/ic_language" />
 
                     <TextView
                         android:id="@+id/txt_lang_app"
@@ -312,7 +312,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="end|center_vertical"
-                        android:src="@drawable/ic_home_logo" />
+                        android:src="@drawable/ic_marked" />
 
                     <TextView
                         android:textSize="18sp"
@@ -327,44 +327,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/service_card_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:strokeWidth="0dp"
-                tools:ignore="DuplicateClickableBoundsCheck,TouchTargetSizeCheck">
-
-                <FrameLayout
-                    android:padding="8dp"
-                    android:id="@+id/frame_service"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp">
-
-                    <ImageView
-                        android:id="@+id/img_service"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="end|center_vertical"
-                        android:src="@drawable/ic_house_tools" />
-
-                    <TextView
-                        android:textSize="18sp"
-                        android:id="@+id/txt_service"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center_vertical"
-                        android:layout_marginEnd="30dp"
-                        android:text="پشتیبانی" />
-
-                </FrameLayout>
-
-            </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/rule_card_view"
@@ -390,7 +352,7 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_gravity="end|center_vertical"
-                        android:src="@drawable/ic_home_logo" />
+                        android:src="@drawable/ic_rule" />
 
                     <TextView
                         android:id="@+id/txt_rule"
@@ -405,6 +367,44 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/logout_CardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:strokeWidth="0dp"
+                tools:ignore="DuplicateClickableBoundsCheck,TouchTargetSizeCheck">
+
+                <FrameLayout
+                    android:padding="8dp"
+                    android:id="@+id/frame_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/img_logout"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="end|center_vertical"
+                        app:srcCompat="@drawable/ic_logout" />
+
+                    <TextView
+                        android:textSize="18sp"
+                        android:id="@+id/txt_logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|center_vertical"
+                        android:layout_marginEnd="30dp"
+                        android:text="خروج" />
+
+                </FrameLayout>
+
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

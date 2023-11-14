@@ -2,67 +2,106 @@ package com.example.bebeenbekhar.home
 
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bebeenbekhar.ItemEvent
 import com.example.bebeenbekhar.ItemHomeDescriptionActivity
-import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.data.SellItem
 import com.example.bebeenbekhar.databinding.FragmentHomeBinding
+import com.example.bebeenbekhar.net.ApiService
+import com.example.bebeenbekhar.utils.BASE_URL
+import com.example.bebeenbekhar.utils.SEND_DATA_TO_DESCRIPTION_ACTIVITY
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
-class FragmentHome: Fragment(), ItemEvent {
+
+class FragmentHome : Fragment(), HomeAdapter.ItemEvent {
     lateinit var binding: FragmentHomeBinding
+    lateinit var myAdapter: HomeAdapter
+    lateinit var apiService: ApiService
+    private lateinit var originalData: ArrayList<SellItem>
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
 
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val data = arrayListOf<SellItem>(
-            SellItem(0,R.drawable.pic1, "موتر فولدر", "نو","سالم بدون تکر","300", "افغانی","987987650", "برچی","کابل"," "),
-            SellItem(0,R.drawable.pic1, "موتر ", "کارکرده","بدون خراش ","500000","افغانی", "987987650", "خیرخانه","کابل"," "),
-            SellItem(0,R.drawable.pic1, "موتر bmv", " نو","رنگ سیاه ماشین متوسط","650000", "افغانی", "987987650", "شار نو","کابل"," "),
-            SellItem(0,R.drawable.pic1, "موتر فولدر", "استفاده شده","سالم","309000", "افغانی", "987987650", "دارالامان","کابل"," "),
 
-        )
+        val retrofit = Retrofit
+            .Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+        apiService = retrofit.create(ApiService::class.java)
 
-        val myAdapter = HomeAdapter(data, this)
-        binding.recycleviewHome.adapter = myAdapter
-        binding.recycleviewHome.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        getDataFromApi()
+
+    }
 
 
+    private fun getDataFromApi() {
+        apiService.getAllSellitems().enqueue(object : Callback<List<SellItem>> {
+            override fun onResponse(
+                call: Call<List<SellItem>>, response: Response<List<SellItem>>
+            ) {
+                originalData = ArrayList(response.body()!!)
+                setDataToRecyclerView(originalData)
+                binding.edtSearch.addTextChangedListener {editText ->
 
-        binding.edtSearch.addTextChangedListener {edtinputText->
-            if (edtinputText!!.isNotEmpty()){
-                val cloneList = data.clone() as ArrayList<SellItem>
-                val fileredList = cloneList.filter {sellItem->
-                    sellItem.itemTitle.contains(edtinputText)
+//                    val arrayList = originalData as ArrayList<SellItem>
+                    if (editText!!.isNotEmpty()){
+//                        val cloneList: ArrayList<SellItem> = arrayList.clone() as ArrayList<SellItem>
+                        val filteredList = originalData.filter { sellitem ->
+                             sellitem.itemTitle.contains(editText)
+                        }
+                        myAdapter.setData(ArrayList(filteredList))
+                    }else{
+                        myAdapter.setData(originalData)
+                    }
                 }
-                myAdapter.setData(ArrayList(fileredList))
-
-            }else{
-                myAdapter.setData(data.clone() as ArrayList<SellItem>)
             }
-        }
 
+            override fun onFailure(call: Call<List<SellItem>>, t: Throwable) {
+                Log.v("testApi", t.message!!)
+            }
+        })
+    }
+
+    private fun setDataToRecyclerView(data: List<SellItem>) {
+        val myData = ArrayList(data)
+        myAdapter = HomeAdapter(myData.clone() as ArrayList<SellItem>, this)
+        binding.recycleviewHome.adapter = myAdapter
+        binding.recycleviewHome.layoutManager =
+            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
     }
 
 
     override fun onItemClicked(sellItem: SellItem) {
         val intent = Intent(activity, ItemHomeDescriptionActivity::class.java)
-        intent.putExtra("data1",sellItem)
+        intent.putExtra(SEND_DATA_TO_DESCRIPTION_ACTIVITY, sellItem)
         startActivity(intent)
+
     }
 
 
