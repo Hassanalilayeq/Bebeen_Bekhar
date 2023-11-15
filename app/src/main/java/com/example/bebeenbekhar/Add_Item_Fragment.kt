@@ -82,18 +82,41 @@ class Add_Item_Fragment : Fragment() {
 
 
         binding.btnAddItem.setOnClickListener {
-            val imgurl = binding.img1.id
-            val item_price = binding.edtPriceTools.text.toString()
-            val item_title = binding.edtTitleChoose.text.toString()
-            val item_type = binding.txtTypeTools.text.toString()
-            val item_State = binding.edtStateTools.text.toString()
-            val itemPriceArz = binding.spinnerArz.selectedItem.toString()
-            val phoneNumber = binding.edtPhoneNumber.text.toString()
-            val item_Description = binding.edtDescripeTools.text.toString()
-            val item_Address = binding.edtAddress.text.toString()
-            val item_Address1 = binding.spinnerProvince.selectedItem.toString()
-            val item_district = binding.spinnerState.selectedItem.toString().toInt()
-            val item_Added_Date = binding.edtDate.text.toString()
+            addNewSellItem()
+
+        }
+
+        val title = arguments?.getString(SENT_DATA_KEY_TITLE)
+        binding.txtTypeTools.text = title
+
+        binding.btnTypeTools.setOnClickListener {
+            val transaction = parentFragmentManager.beginTransaction()
+            transaction.replace(R.id.frameContainerView, Fragment_Division_Add_Items())
+            transaction.commit()
+        }
+
+    }
+
+    private fun addNewSellItem() {
+        val imgurl = binding.img1.id
+        val item_price = binding.edtPriceTools.text.toString()
+        val item_title = binding.edtTitleChoose.text.toString()
+        val item_type = binding.txtTypeTools.text.toString()
+        val item_State = binding.edtStateTools.text.toString()
+        val itemPriceArz = binding.spinnerArz.selectedItem.toString()
+        val phoneNumber = binding.edtPhoneNumber.text.toString()
+        val item_Description = binding.edtDescripeTools.text.toString()
+        val item_Address = binding.edtAddress.text.toString()
+        val item_Address1 = binding.spinnerProvince.selectedItem.toString()
+        val item_district = binding.spinnerState.selectedItem.toString().toInt()
+        val item_Added_Date = binding.edtDate.text.toString()
+
+        if (imgurl != null && item_price.isNotEmpty() &&
+            item_title.isNotEmpty() && item_type.isNotEmpty() &&
+            item_State.isNotEmpty() && itemPriceArz.isNotEmpty() && phoneNumber.isNotEmpty() &&
+            item_Description.isNotEmpty() && item_Address.isNotEmpty() &&
+            item_Address1.isNotEmpty() && item_district != null &&
+            item_Added_Date.isNotEmpty() && item_title.length >= 3 && phoneNumber.length ==10 ) {
 
             val jsonObject = JsonObject()
             jsonObject.addProperty("imageUrl", imgurl)
@@ -109,10 +132,9 @@ class Add_Item_Fragment : Fragment() {
             jsonObject.addProperty("itemDistrict", item_district)
             jsonObject.addProperty("sell_Item_Added_Date", item_Added_Date)
 
-            apiService.insertSellItem(jsonObject).enqueue(object : Callback<String>{
+            apiService.insertSellItem(jsonObject).enqueue(object : Callback<String> {
                 override fun onResponse(call: Call<String>, response: Response<String>) {
                     Toast.makeText(context, "یک ایتم اظافه شد", Toast.LENGTH_SHORT).show()
-
                 }
                 override fun onFailure(call: Call<String>, t: Throwable) {
                     Log.v("apiLog", "Error")
@@ -121,18 +143,8 @@ class Add_Item_Fragment : Fragment() {
             val transaction = parentFragmentManager.beginTransaction()
             transaction.replace(R.id.frameContainerView, FragmentHome())
             transaction.commit()
-
-
-
-        }
-
-        val title = arguments?.getString(SENT_DATA_KEY_TITLE)
-        binding.txtTypeTools.text = title
-
-        binding.btnTypeTools.setOnClickListener {
-            val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.frameContainerView, Fragment_Division_Add_Items())
-            transaction.commit()
+        }else{
+            Toast.makeText(context, "لطفا تمام اطلاعات را وارید کنید.", Toast.LENGTH_SHORT).show()
         }
 
     }

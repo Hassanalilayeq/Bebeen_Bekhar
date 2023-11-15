@@ -20,7 +20,7 @@ class HomeAdapter(private var data: ArrayList<SellItem>, val itemEvent: ItemEven
         fun bindView(sellItem: SellItem){
             // take photo of items by Glide library
             Glide.with(binding.root)
-                .load(R.drawable.pic1)
+                .load(R.drawable.home)
                 .transform(RoundedCornersTransformation(16, 4))
                 .into(binding.imgItem)
             binding.txtTitle.text = sellItem.itemTitle

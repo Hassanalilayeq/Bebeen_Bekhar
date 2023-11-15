@@ -28,10 +28,19 @@
         <activity
             android:name=".ItemHomeDescriptionActivity"
             android:exported="false" />
+        <activity android:name=".ForgetPasswordActivity"
+            android:exported="false"/>
+        <activity android:name=".SignInActivity"
+            android:exported="false"/>
+        <activity android:name=".SignUpActivity"
+            android:exported="false"/>
+        <activity android:name=".utils.BaseActivity"
+            android:exported="false"/>
+        <activity android:name=".Base1Activity"
+            android:exported="false"/>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

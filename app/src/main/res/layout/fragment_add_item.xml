@@ -20,7 +20,7 @@
                 android:layout_gravity="end"
                 android:layout_marginEnd="20dp"
                 android:text="ثبت اعلان"
-                android:textColor="?attr/colorSecondary"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start"
                 android:text="پاک کردن فورم"
-                android:textColor="?attr/colorSecondary"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </androidx.appcompat.widget.Toolbar>
@@ -69,7 +69,7 @@
                 android:backgroundTint="?attr/colorSecondary"
                 android:padding="16dp"
                 android:text="انتخاب مجموعه"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -155,7 +155,7 @@
                 android:backgroundTint="?attr/colorSecondary"
                 android:padding="16dp"
                 android:text="انتخاب تصویر"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -425,7 +425,7 @@
                 android:backgroundTint="?attr/colorSecondary"
                 android:padding="16dp"
                 android:text="ثبت اعلان"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="?attr/colorOnSecondary"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"

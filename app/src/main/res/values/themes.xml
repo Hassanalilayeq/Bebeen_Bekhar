@@ -4,7 +4,7 @@
 
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
-        <item name="colorPrimary">@color/white_light</item>
+        <item name="colorPrimary">@color/red_500</item>
         <item name="colorPrimaryVariant">@color/white_light</item>
         <item name="colorOnPrimary">@color/black</item>
 
@@ -17,7 +17,7 @@
 
         <item name="colorSurface">?attr/colorPrimaryVariant</item>
 
-        <item name="android:statusBarColor" tools:targetApi = "l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi = "l">?attr/colorPrimary</item>
 
         <item name="android:windowLightStatusBar" tools:targetApi = "m">true</item>
     </style>

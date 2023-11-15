@@ -1,8 +1,11 @@
+import org.codehaus.groovy.runtime.ResourceGroovyMethods.toURL
+
 pluginManagement {
     repositories {
         google()
         mavenCentral()
         gradlePluginPortal()
+
     }
 }
 dependencyResolutionManagement {

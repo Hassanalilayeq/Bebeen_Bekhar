@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "252519265372",
+    "project_id": "bebeen-bekhar",
+    "storage_bucket": "bebeen-bekhar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252519265372:android:e975b473eaf1cb7686e299",
+        "android_client_info": {
+          "package_name": "com.example.bebeenbekhar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1DkniAOZUXmFhveOGnAUwKh5gHh1vIWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

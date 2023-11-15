@@ -283,7 +283,7 @@
                 android:padding="16dp"
                 android:backgroundTint="?attr/colorSecondary"
                 android:text="تماس تلفنی"
-                android:textColor="?attr/colorPrimary"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 

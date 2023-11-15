@@ -30,7 +30,7 @@ class ItemHomeDescriptionActivity : AppCompatActivity() {
     private fun showData(showData: SellItem) {
 
         Glide.with(this)
-            .load(showData.imageUrl)
+            .load(R.drawable.home)
             .into(binding.imgItem)
 
         binding.txtTitleItems.text = showData.itemTitle
@@ -40,9 +40,9 @@ class ItemHomeDescriptionActivity : AppCompatActivity() {
         binding.txtUsegeResult.text = showData.itemState
         binding.txtAddress.text = showData.itemAddress + " " + showData.itemProvince
         binding.txtDateIssuse.text = showData.sell_Item_Added_Date
+
         val phone = showData.phoneNumber
         binding.btnCall.setOnClickListener {
-
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data  = Uri.parse("tel:$phone")
             }
