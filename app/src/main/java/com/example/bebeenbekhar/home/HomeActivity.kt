@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.example.bebeenbekhar.Add_Item_Fragment
+import com.example.bebeenbekhar.category.Add_Item_Fragment
 import com.example.bebeenbekhar.category.Fragment_Division
-import com.example.bebeenbekhar.Fragment_MyPage
+import com.example.bebeenbekhar.category.Fragment_MyPage
 import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.databinding.ActivityHomeBinding
 

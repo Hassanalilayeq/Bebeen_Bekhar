@@ -1,4 +1,4 @@
-package com.example.bebeenbekhar
+package com.example.bebeenbekhar.category
 
 import android.app.Activity
 import android.app.AlertDialog
@@ -17,7 +17,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.view.setPadding
 import androidx.fragment.app.Fragment
-import com.example.bebeenbekhar.category.Fragment_Division_Add_Items
+import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.databinding.FragmentAddItemBinding
 import com.example.bebeenbekhar.home.FragmentHome
 import com.example.bebeenbekhar.net.ApiService
@@ -65,6 +65,21 @@ class Add_Item_Fragment : Fragment() {
             }
         }
 
+        // button for cleaning the form
+
+        binding.txtCleanForm.setOnClickListener {
+            binding.txtTypeTools.text = ""
+            binding.edtTitleChoose.text = null
+            binding.edtPriceTools.text = null
+            binding.edtStateTools.text = null
+            binding.edtPhoneNumber.text = null
+            binding.edtDescripeTools.text = null
+            binding.edtAddress.text = null
+            binding.edtDate.text = null
+        }
+
+
+
         // Button to open the gallery
         val openGalleryButton: Button = binding.btnChoosePic
         openGalleryButton.setOnClickListener {
@@ -85,6 +100,8 @@ class Add_Item_Fragment : Fragment() {
             addNewSellItem()
 
         }
+
+        // Takes the type of items_Title
 
         val title = arguments?.getString(SENT_DATA_KEY_TITLE)
         binding.txtTypeTools.text = title
@@ -115,8 +132,10 @@ class Add_Item_Fragment : Fragment() {
             item_title.isNotEmpty() && item_type.isNotEmpty() &&
             item_State.isNotEmpty() && itemPriceArz.isNotEmpty() && phoneNumber.isNotEmpty() &&
             item_Description.isNotEmpty() && item_Address.isNotEmpty() &&
+            item_Address.length < 20 && item_price.length < 10 &&
             item_Address1.isNotEmpty() && item_district != null &&
-            item_Added_Date.isNotEmpty() && item_title.length >= 3 && phoneNumber.length ==10 ) {
+            item_Added_Date.isNotEmpty() && item_title.length > 3 && item_title.length < 20 &&
+            phoneNumber.length ==10 )  {
 
             val jsonObject = JsonObject()
             jsonObject.addProperty("imageUrl", imgurl)

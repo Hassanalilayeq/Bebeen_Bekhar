@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import com.example.bebeenbekhar.data.SellItem
 import com.example.bebeenbekhar.databinding.ActivityItemHomeDescriptionBinding
 import com.example.bebeenbekhar.utils.SEND_DATA_TO_DESCRIPTION_ACTIVITY
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 class ItemHomeDescriptionActivity : AppCompatActivity() {
     lateinit var binding: ActivityItemHomeDescriptionBinding
@@ -31,6 +32,7 @@ class ItemHomeDescriptionActivity : AppCompatActivity() {
 
         Glide.with(this)
             .load(R.drawable.home)
+            .transform(RoundedCornersTransformation(16, 4))
             .into(binding.imgItem)
 
         binding.txtTitleItems.text = showData.itemTitle
@@ -38,11 +40,12 @@ class ItemHomeDescriptionActivity : AppCompatActivity() {
         binding.txtListType.text = showData.itemType
         binding.txtPriceResult.text = showData.itemPrice + " "+ showData.itemPriceArz
         binding.txtUsegeResult.text = showData.itemState
-        binding.txtAddress.text = showData.itemAddress + " " + showData.itemProvince
+        binding.txtAddress.text =   showData.itemProvince+ " "+ showData.itemAddress
         binding.txtDateIssuse.text = showData.sell_Item_Added_Date
 
         val phone = showData.phoneNumber
         binding.btnCall.setOnClickListener {
+
             val intent = Intent(Intent.ACTION_DIAL).apply {
                 data  = Uri.parse("tel:$phone")
             }

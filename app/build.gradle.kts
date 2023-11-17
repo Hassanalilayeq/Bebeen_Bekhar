@@ -88,6 +88,8 @@ dependencies {
     implementation("com.google.android.gms:play-services-auth:20.7.0")
 
 
+    implementation ("com.github.dhaval2404:imagepicker:2.1")
+
 
 
 }

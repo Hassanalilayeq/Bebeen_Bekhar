@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bebeenbekhar.Add_Item_Fragment
 import com.example.bebeenbekhar.R
 import com.example.bebeenbekhar.databinding.FragmentDivisionAddItemBinding
 import com.example.bebeenbekhar.utils.SENT_DATA_KEY_TITLE

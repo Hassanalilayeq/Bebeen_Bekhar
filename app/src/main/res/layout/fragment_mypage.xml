@@ -78,7 +78,7 @@
                         android:layout_gravity="end|top"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="80dp"
-                        android:text="سجاد یوسفی" />
+                        android:text="نام شما" />
 
                     <TextView
                         android:textSize="18sp"
@@ -88,8 +88,10 @@
                         android:layout_gravity="end|center_vertical"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="80dp"
-                        android:text="0707412938" />
+                        android:text="شماره موبایل" />
                     <TextView
+                        android:padding="8dp"
+                        android:layout_marginTop="16dp"
                         android:id="@+id/txtChangeProfile"
                         android:layout_gravity="start|bottom"
                         android:textColor="@color/blue"

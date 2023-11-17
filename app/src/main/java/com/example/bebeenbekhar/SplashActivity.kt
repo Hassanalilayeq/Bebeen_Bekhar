@@ -5,10 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import com.example.bebeenbekhar.databinding.ActivitySplashBinding
 import com.example.bebeenbekhar.home.HomeActivity
-import com.example.bebeenbekhar.net.NetworkChecker
 import com.example.bebeenbekhar.utils.BaseActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
